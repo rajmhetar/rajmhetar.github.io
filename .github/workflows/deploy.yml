@@ -1,31 +1,45 @@
-name: Deploy to GitHub Pages
+# .github/workflows/deploy.yml
+
+name: Deploy Next.js to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main # Trigger on pushes to main branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18.17.0' # Specify your Node.js version
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build the project
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          publish_dir: ./out
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --depth 1 --branch main https://${DEPLOY_TOKEN}@github.com/rajmhetar/rajmhetar.github.io.git out-deploy
+          rm -rf out-deploy/*
+          cp -r out/* out-deploy/
+          cd out-deploy
+          # Create .nojekyll file to disable Jekyll processing
+          touch .nojekyll
+          # Optionally, remove unwanted files like index.txt if present
+          rm -f index.txt
+          git add .
+          git commit -m "Deploy static site [skip ci]"
+          git push origin main --force
