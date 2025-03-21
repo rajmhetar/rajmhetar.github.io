@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Raj Mhetar - Portfolio",
-  description: "The personal portfolio of Raj Mhetar, Electrical and Computer Engineering student at UT Austin",
+  description: "Personal portfolio of Raj Mhetar, Electrical and Computer Engineering student at UT Austin",
 }
 
 export default function RootLayout({
