@@ -1,232 +1,266 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Nav } from "@/components/nav"
-import { GraduationCap, Code, Mail, Linkedin } from "lucide-react"
-//import Image from "next/image"
-import { Timeline } from "@/components/timeline"
-import { TypingAnimation } from "@/components/typing-animation"
-import { ProfileImage } from "@/components/profile-image"
+"use client"
+import Link from "next/link"
+import { Linkedin, Github } from "lucide-react"
+import { useState } from "react"
 
 export default function Home() {
-  const typingPhrases = ["Engineer", "Constant Learner", "Problem Solver", "The Best Spikeball Player", "Self-Starter"]
+  const [activeTab, setActiveTab] = useState("me")
 
-  return (
-    <main className="min-h-screen">
-      <Nav />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
-        <div className="container mx-auto text-center">
-          {/* Center Content */}
-          <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Raj Mhetar</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Pursuing a dual degree in{" "}
-              <span className="text-[#65B891] font-semibold">Electrical & Computer Engineering Honors</span> and{" "}
-              <span className="text-[#65B891] font-semibold">Business Honors</span> at the University of Texas at Austin
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "me":
+        return (
+          <div className="mt-10 space-y-8 leading-8 text-lg">
+            <p>
+              i&apos;m a software engineer, embedded systems engineer, poker enthusiast, and more
             </p>
-            <div className="mb-8">
-              <TypingAnimation phrases={typingPhrases} />
-            </div>
-            <div className="flex gap-4 justify-center">
-              <Button variant="outline" asChild>
-                <a href="#projects">View Projects</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-[400px] rounded-lg overflow-hidden bg-muted">
-              <ProfileImage />
-            </div>
-            <div>
-              <p className="text-lg mb-4">
-                I am a dedicated student pursuing a challenging dual degree program in{" "}
-                <span className="text-[#65B891] font-semibold">Electrical & Computer Engineering Honors</span> and{" "}
-                <span className="text-[#65B891] font-semibold">Business Honors</span> at the University of Texas at
-                Austin, with concentrations in Computer Architecture and Embedded Systems, and Finance.
-              </p>
-              <p className="text-lg mb-4">
-                As a <span className="text-[#65B891] font-semibold">Technical Program Manager</span> at Texas Convergent
-                and member of ECBA and HBA, I combine technical expertise with business acumen to drive innovation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            <p>
+              i am currently interning at <span className="bg-muted px-2 py-0.5 rounded-sm">international biomedical</span> and pursuing my bachelors in electrical and computer engineering honors and business honors at ut austin
+            </p>
 
-      {/* Education Section */}
-      <section id="education" className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-          <Card className="max-w-3xl mx-auto">
-            <CardContent className="p-6">
-              <div className="flex gap-4">
-                <GraduationCap className="h-6 w-6 text-[#65B891]" />
-                <div>
-                  <h3 className="text-xl font-semibold">The University of Texas at Austin</h3>
-                  <p className="text-muted-foreground">Expected Graduation: May 2027</p>
-                  <ul className="mt-2 space-y-1">
-                    <li>B.S. Electrical & Computer Engineering Honors</li>
-                    <li>B.B.A. Canfield Business Honors</li>
-                    <li>Concentrations: Computer Architecture and Embedded Systems, Finance</li>
-                    <li className="mt-2 text-[#65B891] font-semibold">Activities:</li>
-                    <li>• Texas Convergent (IoT Technical Program Manager)</li>
-                    <li>• Electrical and Computer Engineering and Business Association (ECBA)</li>
-                    <li>• Honors Business Association</li>
+            <p>
+              formerly part of research at <Link href="https://ajayan.rice.edu/">rice university</Link>, and nasa / ut center for space research, where i worked on embedded systems, data pipelines, and ml platforms
+            </p>
+
+            <p className="space-x-6">
+              <Link href="https://linkedin.com/in/rajmhetar" className="flex items-center gap-2">
+                <Linkedin className="h-4 w-4" />
+                <span>linkedin</span>
+              </Link>
+              <Link href="https://github.com/rajmhetar" className="flex items-center gap-2">
+                <Github className="h-4 w-4" />
+                <span>github</span>
+              </Link>
+            </p>
+          </div>
+        )
+
+      case "music":
+        return (
+          <div className="mt-10 space-y-8 leading-8 text-lg">
+            <p>music recommendations coming soon...</p>
+          </div>
+        )
+      case "education":
+        return (
+          <div className="mt-10 space-y-8 leading-8 text-lg">
+            <h2 className="text-2xl font-bold mb-6 text-blue-800">education</h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                  <img 
+                    src="/images/UTSeal.png" 
+                    alt="UT Austin Logo" 
+                    className="w-full h-full object-contain p-2"
+                  />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div className="flex justify-between flex-wrap gap-2">
+                    <span className="font-semibold">the university of texas at austin</span>
+                    <span>expected gradudation: may 2027</span>
+                  </div>
+                  <div>b.s. electrical and computer engineering honors</div>
+                  <div>b.b.a. canfield business honors</div>
+                  <div className="text-sm text-muted-foreground">
+                    activities: texas guadaloop (embedded systems), ecba, hba
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 mt-8">
+                <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                  <img 
+                    src="/images/academy.png" 
+                    alt="Academy of Science and Technology Logo" 
+                    className="w-full h-full object-contain p-2"
+                  />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div className="flex justify-between flex-wrap gap-2">
+                    <span className="font-semibold">Academy of Science and Technology</span>
+                    <span>august 2020 – may 2024</span>
+                  </div>
+                  <div className="text-sm text-muted-foreground">activities and societies: science fair, deca</div>
+                  <ul className="list-disc ml-5 space-y-1">
+                    <li>The Academy of Science and Technology is a four-year magnet program housed within The Woodlands College Park High School.</li>
+                    <li>Graduating Rank: 8/782</li>
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-          <Timeline />
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex gap-4">
-                  <Code className="h-6 w-6 text-[#65B891]" />
-                  <div>
-                    <h3 className="text-xl font-semibold">BioFresh</h3>
-                    <p className="text-muted-foreground mb-2">C++, Python, Raspberry Pi</p>
-                    <ul className="mt-2 list-disc list-inside space-y-1">
-                      <li>Developed packaging material using styrene block copolymer architecture</li>
-                      <li>
-                        Optimized C++ scripts, improving prediction accuracy by{" "}
-                        <span className="text-[#65B891] font-semibold">30%</span>
-                      </li>
-                      <li>
-                        Increased avocado shelf life by <span className="text-[#65B891] font-semibold">117%</span> using
-                        Raspberry Pi-based system
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex gap-4">
-                  <Code className="h-6 w-6 text-[#65B891]" />
-                  <div>
-                    <h3 className="text-xl font-semibold">Investivision</h3>
-                    <p className="text-muted-foreground mb-2">Python, BeautifulSoup, Tkinter</p>
-                    <ul className="mt-2 list-disc list-inside space-y-1">
-                      <li>Developed web scraper for real-time financial news analysis</li>
-                      <li>Created sentiment analysis pipeline with automated trend analysis</li>
-                      <li>
-                        Achieved <span className="text-[#65B891] font-semibold">600% return</span> above S&P 500
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills & Awards</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-medium text-[#65B891]">Programming</h4>
-                    <p>Python, Java, C++, C, Flutter, Dart, MATLAB, SystemVerilog</p>
+        )
+      case "experience":
+        return (
+          <div className="mt-10 space-y-8 leading-8 text-lg">
+            <h2 className="text-2xl font-bold mb-6 text-blue-800">experience</h2>
+            <div className="space-y-8">
+              <div>
+                <div className="flex items-start gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <img 
+                      src="/images/internationalbiomedical-removebg-preview.png" 
+                      alt="International Biomedical Logo" 
+                      className="w-full h-full object-contain p-2"
+                    />
                   </div>
-                  <div>
-                    <h4 className="font-medium text-[#65B891]">Tools</h4>
-                    <p>Android Studio, IntelliJ, PyCharm, Eclipse, Jupyter Notebooks, Git, LTSpice</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Honors & Awards</h3>
-                <ul className="space-y-2">
-                  <li>• Regeneron International Science and Engineering Fair (ISEF) Finalist</li>
-                  <li>
-                    • 2nd Place in Securities Industry and Financial Markets Association (SIFMA) Trading Competition
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
-          <Card className="max-w-md mx-auto">
-            <CardContent className="p-6">
-              <div className="flex flex-col items-center gap-6 text-center">
-                <Mail className="h-8 w-8 text-[#65B891]" />
-                <div>
-                  <p className="text-lg mb-2">Let&apos;s Connect!</p>
-                  <p className="text-muted-foreground mb-6">
-                    Feel free to reach out for opportunities, collaborations, or just to say hello!
-                  </p>
-                  <div className="flex flex-col gap-4">
-                    <Button asChild>
-                      <a href="mailto:rajmhetar@gmail.com">rajmhetar@gmail.com</a>
-                    </Button>
-                    <Button variant="outline" asChild>
-                      <a href="tel:9363331687">(936) 333-1687</a>
-                    </Button>
-                    <Button variant="outline" asChild>
-                      <a
-                        href="https://linkedin.com/in/rajmhetar"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                        <span>LinkedIn</span>
-                      </a>
-                    </Button>
+                  <div className="flex-1">
+                    <div className="flex justify-between flex-wrap gap-2">
+                      <span className="font-semibold">international biomedical</span>
+                      <span>may 2025 – aug 2025, austin, tx</span>
+                    </div>
+                    <div className="italic text-muted-foreground">software engineer intern</div>
+                    <ul className="list-disc ml-5 mt-2 space-y-1">
+                      <li>Implemented MISRA-C compliant software library functions for infant life support monitoring systems, developing modular incubator control components.</li>
+                      <li>Developed Unity-based hardware testing framework for transport incubator codebase, and validated 150+ critical functions for 70% code coverage on production hardware.</li>
+                      <li>Automated technical documentation generation using Python scripts, creating guides to streamline deployment and maintenance of CLI documentation</li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} Raj Mhetar • Built with Next.js</p>
-        </div>
-      </footer>
+              <div>
+                <div className="flex items-start gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <img 
+                      src="/images/texas_guadaloop_logo.jpg" 
+                      alt="Texas Guadaloop Logo" 
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between flex-wrap gap-2">
+                      <span className="font-semibold">texas guadaloop</span>
+                      <span>aug 2024 – present, austin, tx</span>
+                    </div>
+                    <div className="italic text-muted-foreground">embedded systems engineer</div>
+                    <ul className="list-disc ml-5 mt-2 space-y-1">
+                      <li>Architected CAN bus network connecting 6+ distributed STM32 microcontrollers across hyperloop pod subsystems, enabling real-time data exchange between propulsion, braking, and sensor modules.</li>
+                      <li>Developed EHW-compliant embedded control system in C, managing 13 operational states with precise timing requirements and fail-safe mechanisms for pod safety and control.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-start gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <img 
+                      src="/images/rice-removebg-preview.png" 
+                      alt="Rice University Logo" 
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between flex-wrap gap-2">
+                      <span className="font-semibold">rice university</span>
+                      <span>may 2024 – aug 2024, houston, tx</span>
+                    </div>
+                    <div className="italic text-muted-foreground">software engineer intern</div>
+                    <ul className="list-disc ml-5 mt-2 space-y-1">
+                      <li>Developed automated data acquisition system using ESP32 microcontrollers for novel produce coating experiments, enabling the researchers to automatically monitor chamber conditions with 95% accuracy.</li>
+                      <li>Built ML model using scikit-learn/TensorFlow achieving 91% accuracy in shelf-life predictions, and automated microscopy analysis pipeline with OpenCV, reducing workload for researchers by over 80%.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-start gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <img 
+                      src="/images/NASA-removebg-preview.png" 
+                      alt="NASA Logo" 
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between flex-wrap gap-2">
+                      <span className="font-semibold">nasa / ut center for space research</span>
+                      <span>may 2023 – aug 2023, austin, tx</span>
+                    </div>
+                    <div className="italic text-muted-foreground">software engineer intern</div>
+                    <ul className="list-disc ml-5 mt-2 space-y-1">
+                      <li>Engineered data processing pipeline to automatically generate radar images from InSAR satellite data in Python.</li>
+                      <li>Built REST API endpoints for earthquake monitoring application, enabling other research teams to access processed satellite radar data showing ground movement measurements from seismic events.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      case "skills":
+        return (
+          <div className="mt-10 space-y-8 leading-8 text-lg">
+            <h2 className="text-2xl font-bold mb-6 text-blue-800">technical skills</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {[
+                { label: "C", src: "/images/skills/c.png" },
+                { label: "C++", src: "/images/skills/cpp.png" },
+                { label: "Python", src: "/images/skills/python.png" },
+                { label: "Java", src: "/images/skills/java.png" },
+                { label: "Go", src: "/images/skills/go.png" },
+                { label: "SQL", src: "/images/skills/sql.png" },
+                { label: "TypeScript", src: "/images/skills/typescript.png" },
+                { label: "HTML", src: "/images/skills/html5.png" },
+                { label: "JavaScript", src: "/images/skills/javascript.png" },
+                { label: "GitHub", src: "/images/skills/github.png" },
+                { label: "Windows", src: "/images/skills/windows.png" },
+                { label: "Linux", src: "/images/skills/linux.png" },
+                { label: "Photoshop", src: "/images/skills/photoshop.png" },
+                { label: "Excel", src: "/images/skills/excel.png" },
+                { label: "PowerPoint", src: "/images/skills/powerpoint.png" },
+              ].map((skill) => (
+                <div key={skill.label} className="rounded-xl border border-[hsl(0_0%_90%)] bg-white p-6 flex flex-col items-center justify-center gap-4 shadow-sm">
+                  <div className="h-12 w-12">
+                    <img src={skill.src} alt={`${skill.label} logo`} className="h-full w-full object-contain" />
+                  </div>
+                  <div className="text-xl font-medium text-gray-700">{skill.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      case "cv":
+        return (
+          <div className="mt-10 space-y-8 leading-8 text-lg">
+            <p>cv/resume pdf will be added here later...</p>
+          </div>
+        )
+      default:
+        return null
+    }
+  }
+
+  return (
+    <main className="min-h-screen font-mono">
+      {/* top nav */}
+      <header className="container mx-auto px-6 pt-8 flex items-center justify-between">
+        <nav className="flex gap-6">
+          {["me", "education", "experience", "skills", "music", "cv"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`${
+                activeTab === tab 
+                  ? "text-blue-800 font-semibold" 
+                  : "text-gray-600 hover:text-blue-800"
+              } transition-colors`}
+            >
+              {tab}
+            </button>
+          ))}
+        </nav>
+
+      </header>
+
+      {/* body */}
+      <section id="me" className="container mx-auto px-6 pt-16 pb-24 max-w-4xl">
+        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-blue-800 lowercase">raj mhetar</h1>
+        {renderTabContent()}
+      </section>
     </main>
   )
 }

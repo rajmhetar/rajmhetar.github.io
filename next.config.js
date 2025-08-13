@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'export',
+  // Since your repo is directly rajmhetar.github.io, no basePath is needed
+  basePath: '',
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
   },
-  // This ensures the app works with GitHub Pages
-  basePath: "",
-  // This prevents using React's strict mode, which can cause issues with hydration
-  reactStrictMode: false,
-  // Makes sure the site works on GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
+  // Configure trailing slashes for GitHub Pages compatibility
+  trailingSlash: true,
+  // Use the standard 'out' directory
+  distDir: 'out',
 }
 
 module.exports = nextConfig

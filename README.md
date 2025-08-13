@@ -1,4 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Raj Mhetar's Portfolio
+
+This is my personal portfolio website showcasing my education, skills, projects, and experience. Visit the live site at [rajmhetar.github.io](https://rajmhetar.github.io).
+
+## Technologies Used
+
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
+
+## Development
+
+To run the development server:
+
+```bash
+npm run dev
+```
+
+## Deployment
+
+The site is deployed to GitHub Pages using:
+
+```bash
+npm run deploy
+```
+
+This will build the site and push it to the main branch of the rajmhetar.github.io repository.
 
 ## Getting Started
 
