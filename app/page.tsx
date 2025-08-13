@@ -12,7 +12,7 @@ export default function Home() {
         return (
           <div className="mt-10 space-y-8 leading-8 text-lg">
             <p>
-              i&apos;m a software engineer, embedded systems engineer, poker enthusiast, and more
+              i&apos;m a software engineer, embedded systems engineer, poker enthusiast, and more.
             </p>
 
             <p>
