@@ -9,7 +9,7 @@
     "lint": "next lint",
     "export": "next export",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -b main"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
