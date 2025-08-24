@@ -16,7 +16,7 @@ export default function Home() {
             </p>
 
             <p>
-              I am currently pursuing my bachelors in electrical and computer engineering honors and business honors at UT Austin.
+              I am currently pursuing my bachelor&apos;s in electrical and computer engineering honors and business honors at UT Austin.
             </p>
 
             <p>
