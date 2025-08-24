@@ -16,7 +16,7 @@ export default function Home() {
             </p>
 
             <p>
-              I am currently interning at <span className="bg-muted px-2 py-0.5 rounded-sm">International Biomedical</span> and pursuing my bachelors in electrical and computer engineering honors and business honors at UT Austin.
+              I am currently pursuing my bachelors in electrical and computer engineering honors and business honors at UT Austin.
             </p>
 
             <p>
