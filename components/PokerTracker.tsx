@@ -257,7 +257,7 @@ export default function PokerTracker() {
         <div className="w-full max-w-xs space-y-5">
           <div className="text-center space-y-1">
             <div className="text-4xl mb-3">♠</div>
-            <h2 className="text-2xl font-bold text-blue-800">Poker Tracker</h2>
+            <h2 className="text-2xl font-bold text-blue-800">Poker Dashboard</h2>
             <p className="text-sm text-gray-400">Private — enter password to access</p>
           </div>
           <input
@@ -288,7 +288,7 @@ export default function PokerTracker() {
 
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-blue-800">Poker Tracker</h2>
+        <h2 className="text-2xl font-bold text-blue-800">Poker Dashboard</h2>
         <div className="flex items-center gap-3">
           {saving && (
             <span className="text-xs text-gray-400 flex items-center gap-1.5">
