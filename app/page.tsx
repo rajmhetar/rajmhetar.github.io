@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { Linkedin, Github } from "lucide-react"
 import { useState } from "react"
+import PokerTracker from "@/components/PokerTracker"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("me")
@@ -368,6 +369,9 @@ export default function Home() {
            </div>
          )
        
+       case "poker":
+         return <PokerTracker />
+
        default:
         return null
     }
@@ -378,7 +382,7 @@ export default function Home() {
       {/* top nav */}
       <header className="container mx-auto px-6 pt-8 flex items-center justify-between">
         <nav className="flex gap-6">
-          {["me", "education", "experience", "skills", "projects"].map((tab) => (
+          {["me", "education", "experience", "skills", "projects", "poker"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -388,7 +392,7 @@ export default function Home() {
                   : "text-gray-600 hover:text-blue-800"
               } transition-colors`}
             >
-              {tab === "me" ? "Me" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === "me" ? "Me" : tab.charAt(0).toUpperCase() + tab.slice(1)}{tab === "poker" ? " ♠" : ""}
             </button>
           ))}
         </nav>
