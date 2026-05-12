@@ -8,37 +8,51 @@ export default function Home() {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case "me":
-        return (
-          <div className="mt-10 space-y-8 leading-8 text-lg">
-            <p>
-              I&apos;m a software engineer, embedded systems engineer, poker enthusiast, and more.
-            </p>
-
-            <p>
-              I am currently pursuing my bachelor&apos;s in electrical and computer engineering honors and business honors at UT Austin.
-            </p>
-
-            <p>
-              Formerly part of research at Rice University, and NASA / UT Center for Space Research, where I worked on embedded systems, data pipelines, and ML platforms.
-            </p>
-
-            <p>
-              Check out my <button onClick={() => setActiveTab("experience")} className="text-blue-800 hover:underline cursor-pointer">work experience</button>, <button onClick={() => setActiveTab("education")} className="text-blue-800 hover:underline cursor-pointer">education</button>, and <button onClick={() => setActiveTab("skills")} className="text-blue-800 hover:underline cursor-pointer">technical skills</button>.
-            </p>
-
-            <p className="space-x-6">
-              <Link href="https://linkedin.com/in/rajmhetar" className="flex items-center gap-2">
-                <Linkedin className="h-4 w-4" />
-                <span>LinkedIn</span>
-              </Link>
-              <Link href="https://github.com/rajmhetar" className="flex items-center gap-2">
-                <Github className="h-4 w-4" />
-                <span>GitHub</span>
-              </Link>
-            </p>
-          </div>
-        )
+             case "me":
+         return (
+           <div className="mt-10 flex items-start gap-8">
+                           {/* Text content - left side */}
+              <div className="flex-1 space-y-8 leading-8 text-lg">
+               <p>
+                 I&apos;m a software engineer, embedded systems engineer, poker enthusiast, and more.
+               </p>
+ 
+               <p>
+                 I am currently pursuing my bachelor&apos;s in electrical and computer engineering honors and business honors at UT Austin. My dual background in engineering and business allows me to approach technical problems with both depth and strategic perspective.
+               </p>
+ 
+               <p>
+                 Incoming software engineer intern at SpaceX (Direct to Cell Engineering). Formerly at AMD (EPYC Server CPU Firmware), International Biomedical, Rice University, and NASA / UT Center for Space Research.
+               </p>
+ 
+               <p>
+                 Check out my <button onClick={() => setActiveTab("experience")} className="text-blue-800 hover:underline cursor-pointer">work experience</button>, <button onClick={() => setActiveTab("education")} className="text-blue-800 hover:underline cursor-pointer">education</button>, and <button onClick={() => setActiveTab("skills")} className="text-blue-800 hover:underline cursor-pointer">technical skills</button>.
+               </p>
+ 
+               <div className="flex space-x-8 pt-4">
+                 <Link href="https://linkedin.com/in/rajmhetar" className="flex items-center gap-2 text-blue-800 hover:text-blue-600 transition-colors">
+                   <Linkedin className="h-5 w-5" />
+                   <span>LinkedIn</span>
+                 </Link>
+                 <Link href="https://github.com/rajmhetar" className="flex items-center gap-2 text-blue-800 hover:text-blue-600 transition-colors">
+                   <Github className="h-5 w-5" />
+                   <span>GitHub</span>
+                 </Link>
+               </div>
+             </div>
+             
+             {/* Headshot - right side */}
+             <div className="flex-shrink-0">
+               <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-800 shadow-lg">
+                 <img 
+                   src="/images/Raj_mhetar_headshot.png" 
+                   alt="Raj Mhetar Headshot" 
+                   className="w-full h-full object-cover"
+                 />
+               </div>
+             </div>
+           </div>
+         )
 
       case "education":
         return (
@@ -56,7 +70,7 @@ export default function Home() {
                 <div className="flex-1 space-y-2">
                   <div className="flex justify-between flex-wrap gap-2">
                     <span className="font-semibold">The University of Texas at Austin</span>
-                    <span>Expected Graduation: May 2027</span>
+                    <span>Expected Graduation: May 2028</span>
                   </div>
                   <div>B.S. Electrical and Computer Engineering Honors</div>
                   <div>B.B.A. Canfield Business Honors</div>
@@ -97,9 +111,63 @@ export default function Home() {
               <div>
                 <div className="flex items-start gap-4">
                   <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                    <img 
-                      src="/images/internationalbiomedical-removebg-preview.png" 
-                      alt="International Biomedical Logo" 
+                    <img
+                      src="/images/spacex.png"
+                      alt="SpaceX Logo"
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between flex-wrap gap-2">
+                      <span className="font-semibold">SpaceX</span>
+                      <div className="text-right">
+                        <div>May 2026 – Present</div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="italic text-muted-foreground">Incoming Software Engineer Intern</div>
+                      <div className="italic text-muted-foreground">Sunnyvale, CA</div>
+                    </div>
+                    <ul className="list-disc ml-5 mt-1 space-y-1">
+                      <li>Summer 2026 – Direct to Cell Engineering</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-start gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <img
+                      src="/images/amd-logo-black-and-white.png"
+                      alt="AMD Logo"
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between flex-wrap gap-2">
+                      <span className="font-semibold">AMD</span>
+                      <div className="text-right">
+                        <div>Jan 2026 – May 2026</div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="italic text-muted-foreground">Software Engineer Intern</div>
+                      <div className="italic text-muted-foreground">Austin, TX</div>
+                    </div>
+                    <ul className="list-disc ml-5 mt-1 space-y-1">
+                      <li>Spring 2026 – EPYC Server CPU Firmware</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-start gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <img
+                      src="/images/internationalbiomedical-removebg-preview.png"
+                      alt="International Biomedical Logo"
                       className="w-full h-full object-contain p-2"
                     />
                   </div>
@@ -230,6 +298,7 @@ export default function Home() {
                 { label: "Photoshop", src: "/images/skills/photoshop.png" },
                 { label: "Excel", src: "/images/skills/excel.png" },
                 { label: "PowerPoint", src: "/images/skills/powerpoint.png" },
+                { label: "Poker", src: "/images/skills/poker.png" },
               ].map((skill) => (
                 <div key={skill.label} className="rounded-xl border border-[hsl(0_0%_90%)] bg-white p-6 flex flex-col items-center justify-center gap-4 shadow-sm">
                   <div className="h-12 w-12">
@@ -240,9 +309,66 @@ export default function Home() {
               ))}
             </div>
           </div>
-        )
-      
-      default:
+                 )
+       
+       case "projects":
+         return (
+           <div className="mt-10 space-y-8 leading-8 text-lg">
+             <h2 className="text-2xl font-bold mb-6 text-blue-800">Projects</h2>
+             <div className="space-y-8">
+               <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
+                 <div className="flex items-start gap-4">
+                   <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-blue-100 flex items-center justify-center">
+                     <svg className="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                     </svg>
+                   </div>
+                   <div className="flex-1">
+                     <div className="flex justify-between items-start mb-2">
+                       <h3 className="text-xl font-semibold text-gray-900">ARM-Based Real-Time Operating System</h3>
+                       <a href="https://github.com/rajmhetar/rajos" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors">
+                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 4.624-5.479 4.92.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                         </svg>
+                       </a>
+                     </div>
+                     <ul className="list-disc ml-5 space-y-2 text-gray-700">
+                       <li>Implemented a custom RTOS for ARM (versatilepb/ARM926) with reset/vector table, SysTick timer interrupts, PL011 UART driver with printf, TCB-based task management, and a custom memory/linker layout.</li>
+                       <li>Built a cross-platform build/test pipeline (Python + Make) producing ELF/BIN/HEX artifacts and automated QEMU runners; authored setup and hardware-porting documentation for simplified configuration.</li>
+                     </ul>
+                   </div>
+                 </div>
+               </div>
+
+               <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
+                 <div className="flex items-start gap-4">
+                   <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-green-100 flex items-center justify-center">
+                     <svg className="w-8 h-8 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                     </svg>
+                   </div>
+                   <div className="flex-1">
+                     <div className="flex justify-between items-start mb-2">
+                       <h3 className="text-xl font-semibold text-gray-900">Smart Nutrition Analytics System</h3>
+                       <a href="https://github.com/rajmhetar/NutriScan" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors">
+                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.03-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 4.624-5.479 4.92.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                         </svg>
+                       </a>
+                     </div>
+                     <div className="text-sm text-gray-600 mb-3">ESP32, C++, React, Firebase, TensorFlow | 2025</div>
+                     <ul className="list-disc ml-5 space-y-2 text-gray-700">
+                       <li>Built distributed IoT prototype with ESP32 microcontrollers, integrating computer vision API and load cell sensors to demonstrate food identification with 94% accuracy across multiple connected devices.</li>
+                       <li>Engineered full-stack architecture with embedded C++ firmware, React web dashboard, and Firebase real-time database, implementing WebSocket connections for sub-200ms latency nutrition data visualization.</li>
+                     </ul>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         )
+       
+       default:
         return null
     }
   }
@@ -252,7 +378,7 @@ export default function Home() {
       {/* top nav */}
       <header className="container mx-auto px-6 pt-8 flex items-center justify-between">
         <nav className="flex gap-6">
-          {["me", "education", "experience", "skills"].map((tab) => (
+          {["me", "education", "experience", "skills", "projects"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -270,7 +396,7 @@ export default function Home() {
 
       {/* body */}
       <section id="me" className="container mx-auto px-6 pt-16 pb-24 max-w-4xl">
-        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-blue-800">Raj Mhetar</h1>
+        <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-blue-800">Raj Mhetar</h1>
         {renderTabContent()}
       </section>
     </main>

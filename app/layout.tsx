@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Raj Mhetar",
   description: "Personal portfolio of Raj Mhetar - ECE & Business Honors Student at UT Austin",
   metadataBase: new URL("https://rajmhetar.github.io"),
+  icons: {
+    icon: '/images/RM.ico',
+  },
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
