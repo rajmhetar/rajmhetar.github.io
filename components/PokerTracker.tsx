@@ -75,6 +75,11 @@ function fmt(n: number) {
   return (n >= 0 ? "+$" : "-$") + Math.abs(n).toFixed(2)
 }
 
+function fmtDate(raw: string) {
+  const d = new Date(raw)
+  return `${d.getUTCMonth() + 1}/${d.getUTCDate()}/${d.getUTCFullYear()}`
+}
+
 function StatCard({
   label, value, sub, positive,
 }: {
@@ -241,7 +246,7 @@ export default function PokerTracker() {
   let cumulative = 0
   const chartData = sorted.map(s => {
     cumulative += s.cashOut - s.buyIn
-    return { date: s.date, profit: parseFloat(cumulative.toFixed(2)) }
+    return { date: fmtDate(s.date), profit: parseFloat(cumulative.toFixed(2)) }
   })
 
   const formValid =
@@ -375,7 +380,7 @@ export default function PokerTracker() {
                   <XAxis
                     dataKey="date"
                     tick={{ fontSize: 10, fill: "#9ca3af" }}
-                    tickFormatter={d => d.slice(5)}
+                    tickFormatter={d => d}
                   />
                   <YAxis
                     tick={{ fontSize: 10, fill: "#9ca3af" }}
@@ -426,7 +431,7 @@ export default function PokerTracker() {
                     <div className={`w-1 self-stretch rounded-full flex-shrink-0 ${isWin ? "bg-green-400" : "bg-red-400"}`} />
                     <div className="flex-1 min-w-0 space-y-1.5">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-semibold text-sm">{s.date}</span>
+                        <span className="font-semibold text-sm">{fmtDate(s.date)}</span>
                         <span className="text-xs bg-blue-50 text-blue-800 border border-blue-100 px-2 py-0.5 rounded-full">
                           {s.stakes} NLH
                         </span>
