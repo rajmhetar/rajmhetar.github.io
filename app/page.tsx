@@ -23,7 +23,7 @@ export default function Home() {
                </p>
  
                <p>
-                 Incoming software engineer intern at SpaceX (Direct to Cell Engineering). Formerly at AMD (EPYC Server CPU Firmware), International Biomedical, Rice University, and NASA / UT Center for Space Research.
+                 Formerly at SpaceX, AMD, International Biomedical, Rice University, and NASA / UT Center for Space Research.
                </p>
  
                <p>
@@ -76,7 +76,7 @@ export default function Home() {
                   <div>B.S. Electrical and Computer Engineering Honors</div>
                   <div>B.B.A. Canfield Business Honors</div>
                   <div className="text-sm text-muted-foreground">
-                    Activities: Texas Guadaloop (embedded systems), ECBA, HBA
+                    Activities: Texas Guadaloop (embedded systems), Texas Iron Spikes, Longhorn Best Buddies
                   </div>
                 </div>
               </div>
@@ -98,6 +98,7 @@ export default function Home() {
                   <ul className="list-disc ml-5 space-y-1">
                     <li>The Academy of Science and Technology is a four-year magnet program housed within The Woodlands College Park High School.</li>
                     <li>Graduating Rank: 8/782</li>
+                    <li>ACT: 36/36</li>
                   </ul>
                 </div>
               </div>
@@ -122,15 +123,16 @@ export default function Home() {
                     <div className="flex justify-between flex-wrap gap-2">
                       <span className="font-semibold">SpaceX</span>
                       <div className="text-right">
-                        <div>May 2026 – Present</div>
+                        <div>May 2026 – Aug 2026</div>
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
-                      <div className="italic text-muted-foreground">Incoming Software Engineer Intern</div>
+                      <div className="italic text-muted-foreground">Software Engineer Intern</div>
                       <div className="italic text-muted-foreground">Sunnyvale, CA</div>
                     </div>
                     <ul className="list-disc ml-5 mt-1 space-y-1">
-                      <li>Summer 2026 – Direct to Cell Engineering</li>
+                      <li>Developed sub-millisecond real-time link adaptation power-control algorithms in C++ for Starlink Mobile, adjusting transmit power and modulation and coding scheme from SINR feedback to hold a targeted 1% BLER.</li>
+                      <li>Built validation and simulation tooling to benchmark link-adaptation performance across various channel conditions, verifying an average 20% power reduction in user equipment on the device-to-satellite uplink.</li>
                     </ul>
                   </div>
                 </div>
@@ -157,7 +159,8 @@ export default function Home() {
                       <div className="italic text-muted-foreground">Austin, TX</div>
                     </div>
                     <ul className="list-disc ml-5 mt-1 space-y-1">
-                      <li>Spring 2026 – EPYC Server CPU Firmware</li>
+                      <li>Developed a debugging diagnostic tool for EPYC Server CPU firmware, building a rule-based diagnostic framework to ingest log files and hardware telemetry for early identification of memory failures.</li>
+                      <li>Integrated the tool into an internal AI chatbot with automated error-triggered invocation, enabling 50+ engineers across hardware, firmware, and validation teams to identify deadlocks, resource contention, and related issues.</li>
                     </ul>
                   </div>
                 </div>
@@ -184,9 +187,8 @@ export default function Home() {
                       <div className="italic text-muted-foreground">Austin, TX</div>
                     </div>
                     <ul className="list-disc ml-5 mt-1 space-y-1">
-                      <li>Implemented MISRA-C compliant software library functions for infant life support monitoring systems, developing modular incubator control components.</li>
-                      <li>Developed Unity-based hardware testing framework for transport incubator codebase, and validated 150+ critical functions for 70% code coverage on production hardware.</li>
-                      <li>Automated technical documentation generation using Python scripts, creating guides to streamline deployment and maintenance of CLI documentation.</li>
+                      <li>Implemented MISRA-compliant software modules for infant life support monitoring systems; optimized ThreadX task architecture to improve temperature and oxygen sensor processing time by 15%.</li>
+                      <li>Developed a C-based hardware testing framework for the transport incubator codebase, validating 150+ critical functions including sensor processing and safety systems for 95% code coverage on production hardware.</li>
                     </ul>
                   </div>
                 </div>
@@ -213,8 +215,8 @@ export default function Home() {
                       <div className="italic text-muted-foreground">Austin, TX</div>
                     </div>
                     <ul className="list-disc ml-5 mt-1 space-y-1">
-                      <li>Architected CAN bus network connecting 6+ distributed STM32 microcontrollers across hyperloop pod subsystems, enabling real-time data exchange between propulsion, braking, and sensor modules.</li>
-                      <li>Developed EHW-compliant embedded control system in C, managing 13 operational states with precise timing requirements and fail-safe mechanisms for pod safety and control.</li>
+                      <li>Worked on an 8-person embedded systems team developing sensor integration and control systems for a hyperloop pod prototype, implementing 6 STM32 MCUs with CAN bus communication for full subsystem integration.</li>
+                      <li>Architected and implemented a real-time embedded control system in C to manage 13 operational states with sub-10ms timing constraints and redundant fail-safe mechanisms, passing 100% of developed unit tests.</li>
                     </ul>
                   </div>
                 </div>
@@ -321,21 +323,22 @@ export default function Home() {
                  <div className="flex items-start gap-4">
                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-blue-100 flex items-center justify-center">
                      <svg className="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                      </svg>
                    </div>
                    <div className="flex-1">
                      <div className="flex justify-between items-start mb-2">
-                       <h3 className="text-xl font-semibold text-gray-900">ARM-Based Real-Time Operating System</h3>
-                       <a href="https://github.com/rajmhetar/rajos" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors">
+                       <h3 className="text-xl font-semibold text-gray-900">Lock-Free Wikipedia SPSC Event Pipeline</h3>
+                       <a href="https://github.com/rajmhetar/RT-Wikipedia-Edit-Pipeline" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors">
                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 4.624-5.479 4.92.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                          </svg>
                        </a>
                      </div>
+                     <div className="text-sm text-gray-600 mb-3">C++, CMake | 2026</div>
                      <ul className="list-disc ml-5 space-y-2 text-gray-700">
-                       <li>Implemented a custom RTOS for ARM (versatilepb/ARM926) with reset/vector table, SysTick timer interrupts, PL011 UART driver with printf, TCB-based task management, and a custom memory/linker layout.</li>
-                       <li>Built a cross-platform build/test pipeline (Python + Make) producing ELF/BIN/HEX artifacts and automated QEMU runners; authored setup and hardware-porting documentation for simplified configuration.</li>
+                       <li>Designed a C++ lock-free SPSC ring buffer using acquire/release atomics and alignas(64) padding to eliminate false sharing; abstracted the event source behind a virtual interface enabling deterministic capture-and-replay testing.</li>
+                       <li>Benchmarked ring-buffer throughput at 9M ops/s, 6× faster than a mutex-guarded queue, with p50 latency of 400ns vs. 2µs; sharded into a 4-way pipeline sustaining 8K edits/sec end-to-end under accelerated replay.</li>
                      </ul>
                    </div>
                  </div>
